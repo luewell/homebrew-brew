@@ -40,6 +40,9 @@ class Stack < Formula
     opoo "could not replace the running daemon; run \"stack daemon restart\""
   end
 
+  # Named in full: "stack" alone is also a cask, so Homebrew answers a bare name
+  # with "Cask 'stack' is not installed" — and an instruction that does not work
+  # is worse than none.
   def caveats
     <<~TEXT
       Prepare this machine once, then work in any repository with a stack.yaml:
@@ -50,7 +53,7 @@ class Stack < Formula
       To remove it, undo the machine changes before uninstalling:
 
         stack uninstall --purge
-        brew uninstall stack
+        brew uninstall luewell/brew/stack
 
       --purge also deletes the databases and object storage your projects used.
       Leave it off to keep them.
