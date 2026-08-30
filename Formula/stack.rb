@@ -31,6 +31,15 @@ class Stack < Formula
   # has to be undone is a resolver file, two system services and a trusted root,
   # each reversed from the record written when it was installed. So it is said
   # here, and it has to happen first: afterwards the tool that undoes it is gone.
+  # Upgrading replaces the files and leaves the daemon that was already running
+  # exactly where it was, answering as the version just replaced. The archive's
+  # own installer does this; Homebrew never runs that, so the formula does.
+  def post_install
+    system bin/"stack", "daemon", "restart"
+  rescue
+    opoo "could not replace the running daemon; run \"stack daemon restart\""
+  end
+
   def caveats
     <<~TEXT
       Prepare this machine once, then work in any repository with a stack.yaml:
