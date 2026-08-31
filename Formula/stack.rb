@@ -1,23 +1,23 @@
 class Stack < Formula
   desc "Per-project runtimes, shared services and secure .test domains"
   homepage "https://github.com/luewell/stack-binaries"
-  version "1.1.0"
+  version "1.2.0"
 
   on_macos do
     on_arm do
       url "https://github.com/luewell/stack-binaries/releases/download/stack-#{version}/stack-#{version}-darwin-arm64.tar.gz"
-      sha256 "27423f63b2b800d218e429b33dfd0df0d129519c797410a4643e9d2352da008b"
+      sha256 "bb11492365406a29e4c4ed9ce4451ea6d759ad2903f62dbc43c055aeab026f46"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/luewell/stack-binaries/releases/download/stack-#{version}/stack-#{version}-linux-amd64.tar.gz"
-      sha256 "5458e51ce49ca2278da257a714ffc1ba4cc2fb386d4fced7a67ff534b81c35bc"
+      sha256 "c31c44f18722802ba1809f6876155d054272ad07c26b03d15eb14193d0e66eb4"
     end
     on_arm do
       url "https://github.com/luewell/stack-binaries/releases/download/stack-#{version}/stack-#{version}-linux-arm64.tar.gz"
-      sha256 "6f090fd4fb8c69adc2f74cee88e887d76bde77b1db152f3b47724190a9f98f7b"
+      sha256 "d23b9879f309d03621fe9180f507a40e173bca5b4280f3c14cfbeafc9b50ebfd"
     end
   end
 
@@ -25,6 +25,9 @@ class Stack < Formula
   # without the rest leaves it unable to serve anything.
   def install
     bin.install "stack", "stackd", "stack-shim", "stack-helper", "stack-hosts"
+
+    # Where each shell already looks, rather than a line in somebody's profile.
+    generate_completions_from_executable(bin/"stack", "completion")
   end
 
   # Homebrew has no "zap" for a formula, and could not do this one anyway: what
