@@ -1,23 +1,23 @@
 class Stack < Formula
   desc "Per-project runtimes, shared services and secure .test domains"
   homepage "https://github.com/luewell/stack-binaries"
-  version "1.4.0"
+  version "1.4.1"
 
   on_macos do
     on_arm do
       url "https://github.com/luewell/stack-binaries/releases/download/stack-#{version}/stack-#{version}-darwin-arm64.tar.gz"
-      sha256 "ec0a1b18ed0fa9254c50e1011f5ebcd73dbda7cc77fca6b8f72f3ba200ed5c14"
+      sha256 "57a1997ab76f36283bb2b52fddc9d3f45b12fece9f442edecaba91795f5047ea"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/luewell/stack-binaries/releases/download/stack-#{version}/stack-#{version}-linux-amd64.tar.gz"
-      sha256 "e2f68720b82d0ec60c889fa3dbae2404598e0825026bb74b22f99cf28482be60"
+      sha256 "c65ed11ed921783450d548cc6e0459750c8088560973bfe9fda4f28a9e20dd96"
     end
     on_arm do
       url "https://github.com/luewell/stack-binaries/releases/download/stack-#{version}/stack-#{version}-linux-arm64.tar.gz"
-      sha256 "5a90af116763b122c33eefed542b28312bcf3f1dd339588e00687cba1de3f6ab"
+      sha256 "b148b774ee23eeef38c49418babdb065b2e28ee9976d3c9df0298110958525a5"
     end
   end
 
@@ -41,11 +41,12 @@ class Stack < Formula
         stack setup
         stack up
 
-      After upgrading, run this once so the daemon is the version just
-      installed. Homebrew cannot do it: it runs with a home and a temporary
-      directory of its own, and the daemon is reachable through neither.
+      Homebrew leaves native services unchanged during package installation.
+      After upgrading, refresh the machine and then run doctor as the final
+      validation:
 
-        stack daemon restart
+        stack setup
+        stack doctor
 
       To remove it, undo the machine changes before uninstalling:
 
