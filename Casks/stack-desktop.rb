@@ -1,6 +1,6 @@
 cask "stack-desktop" do
-  version "0.4.1"
-  sha256 "67bb4b9c905f8b1fd9cd861825436f6e45d10d7dbab81f6311b1c0a80672dcda"
+  version "0.4.2"
+  sha256 "6327e66548d91ae8f6b7a5ba07e0a4dd78bcb6f91445c0759c7d629b87514afe"
 
   url "https://github.com/luewell/stack-binaries/releases/download/stack-desktop-#{version}/stack-desktop-#{version}-darwin-arm64.dmg"
   name "Stack Desktop"
@@ -21,9 +21,6 @@ cask "stack-desktop" do
   ]
 
   caveats <<~TEXT
-    Stack Desktop is signed ad hoc and not notarized, so macOS asks before it
-    first opens: approve it under System Settings > Privacy & Security.
-
     Prepare this machine once, from the app's Setup page or with:
 
       stack setup
