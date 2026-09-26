@@ -1,6 +1,6 @@
 cask "stack-desktop" do
-  version "0.3.0"
-  sha256 "ecf9e4fa9caad0c0f3711a0b14db77c4903932c30346ae29b8645c7a5eb999e8"
+  version "0.4.1"
+  sha256 "67bb4b9c905f8b1fd9cd861825436f6e45d10d7dbab81f6311b1c0a80672dcda"
 
   url "https://github.com/luewell/stack-binaries/releases/download/stack-desktop-#{version}/stack-desktop-#{version}-darwin-arm64.dmg"
   name "Stack Desktop"
