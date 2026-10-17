@@ -8,7 +8,7 @@ cask "mac-cleaner" do
   homepage "https://github.com/luewell/stack-binaries"
 
   auto_updates true
-  depends_on macos: ">= :tahoe"
+  depends_on macos: :tahoe
 
   app "Mac Cleaner.app"
 
