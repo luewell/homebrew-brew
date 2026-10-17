@@ -1,6 +1,6 @@
 cask "mac-cleaner" do
-  version "0.1.1"
-  sha256 "71c78c18810378615670ef4d37e2c38b66212c2653680158655a06f39637610f"
+  version "0.1.2"
+  sha256 "e00814f2b650b36ce6036fc8172df423c789596570769c9ff955dc4b6f7d4b1a"
 
   url "https://github.com/luewell/stack-binaries/releases/download/mac-cleaner-#{version}/MacCleaner-#{version}.dmg"
   name "Mac Cleaner"
