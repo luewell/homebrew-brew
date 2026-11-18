@@ -1,23 +1,23 @@
 class Stack < Formula
   desc "Per-project runtimes, shared services and secure .test domains"
   homepage "https://github.com/luewell/stack-binaries"
-  version "2.33.1"
+  version "2.34.0"
 
   on_macos do
     on_arm do
       url "https://github.com/luewell/stack-binaries/releases/download/stack-#{version}/stack-#{version}-darwin-arm64.tar.gz"
-      sha256 "4de7bc7d7e174261295e7ee9fd89da543a4e0b41e56d4bb08b320d08e87d7ed3"
+      sha256 "486b1d8b21c3d62a8ad6c8c6e92382ce93833bf2f1eb6fdbccc87449ab1bf44b"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/luewell/stack-binaries/releases/download/stack-#{version}/stack-#{version}-linux-amd64.tar.gz"
-      sha256 "1578619c29e9dac5bdb80037dcd0789dcc538fb4667f248bc622521d21ac855a"
+      sha256 "47a1a0316aa7d358c577958b7d9f81a85ae5acfcde762b044fcca86941497eb0"
     end
     on_arm do
       url "https://github.com/luewell/stack-binaries/releases/download/stack-#{version}/stack-#{version}-linux-arm64.tar.gz"
-      sha256 "5e50e6e18055143278797098dca638023474ef0cc080e37eed555f49cd86c292"
+      sha256 "fb94b69536f05a739a79d513d2d88869cc0f663d0ca3b63a9cf187fb584e0779"
     end
   end
 
